@@ -54,6 +54,17 @@
         <maven.compiler.source>1.6</maven.compiler.source>
     </properties>
 
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://nexus:8081/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://nexus:8081/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <!-- Define the version of JBoss' Java EE 6 APIs we want to import. 
@@ -98,6 +109,14 @@
             <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- Test deps -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
 
     <build>
